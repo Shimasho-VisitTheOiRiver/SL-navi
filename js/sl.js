@@ -83,11 +83,11 @@ function moveicon() {
                 if (nowTime >= csvEndTime || nowTime <= csvStartTime) {
                     nowSta = 1;
                     y = csvList[nowSta][5]
-                } else if(nowTime > csvTime){
+                } else if (nowTime > csvTime) {
                     nowSta = i + 1;
                     //現在時刻に近い駅 - 次の駅 = 距離
                     var dis = csvList[i][5] - csvList[i + 1][5]
-                    //現在時刻に近い駅 - 次の駅 = 時間（分）
+                        //現在時刻に近い駅 - 次の駅 = 時間（分）
                     var disTime = csvTime - (Number(csvList[i + 1][2]) * 60 + Number(csvList[i + 1][3]));
                     //近い駅の到着時刻からなん分経ったか？
                     var diffTime = nowTime - (Number(csvList[i][2]) * 60 + Number(csvList[i][3]))
@@ -121,5 +121,7 @@ $(function() {
     $('#header').click(function() {
         $('#header').css('top', '-10vh');
         flaOpenHeader = 1;
+
+        location.href = "#icon";
     });
 });
